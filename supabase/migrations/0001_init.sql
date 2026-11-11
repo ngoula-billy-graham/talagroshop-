@@ -99,7 +99,7 @@ create index if not exists orders_status_idx on public.orders (status, created_a
 create table if not exists public.order_items (
   id           bigint generated always as identity primary key,
   order_id     uuid not null references public.orders (id) on delete cascade,
-  product_id   uuid not null references public.products (id),
+  product_id   uuid references public.products (id) on delete set null,
   product_name text not null,
   unit         text not null,
   unit_price   integer not null check (unit_price >= 0),

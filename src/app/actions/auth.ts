@@ -100,7 +100,7 @@ export async function signUp(_prev: AuthState, formData: FormData): Promise<Auth
     return { error: "Indiquez votre nom, une adresse e-mail valide et un mot de passe d’au moins 6 caractères." };
   }
   const supabase = await createClient();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://talagroshop.vercel.app";
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
@@ -132,7 +132,7 @@ export async function resetPassword(_prev: AuthState, formData: FormData): Promi
     return { error: "Indiquez une adresse e-mail valide." };
   }
   const supabase = await createClient();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://talagroshop.vercel.app";
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
     redirectTo: `${siteUrl}/auth/callback?next=/compte`,
   });

@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://talagroshop.vercel.app"),
   title: { default: "Tal Agro Shop — Produits agricoles du Cameroun", template: "%s · Tal Agro Shop" },
   description:
     "Produits agricoles camerounais : fruits, légumes, tubercules, œufs et produits transformés. Prix en FCFA, commande en ligne, livraison depuis Bafoussam.",

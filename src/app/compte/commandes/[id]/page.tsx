@@ -37,17 +37,12 @@ async function Receipt({
 
   return (
     <>
-      {isNew && (
-        <div className="mt-6 rounded-2xl border border-green-200 bg-green-50 p-5 print:hidden">
-          <p className="font-bold text-green-900">Commande enregistrée · {order.number}</p>
-          <p className="mt-1 text-sm text-green-900">
-            Cliquez sur <b>« Envoyer le reçu PDF sur WhatsApp »</b> ci-dessous pour générer le fichier{" "}
-            <code>Recu-{order.number}.pdf</code> et le transmettre à Tal Agro Shop.
-          </p>
-        </div>
-      )}
-
-      <ReceiptActions orderId={order.id} orderNumber={order.number} whatsappUrl={waUrl} />
+      <ReceiptActions
+        orderId={order.id}
+        orderNumber={order.number}
+        whatsappUrl={waUrl}
+        isNew={isNew}
+      />
 
       <article className="mt-6 rounded-3xl border border-line bg-white p-5 sm:p-8 print:border-0 print:p-0 print:shadow-none">
         <header className="flex flex-wrap justify-between gap-4 border-b-2 border-brand pb-4">

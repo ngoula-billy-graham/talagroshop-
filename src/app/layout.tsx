@@ -51,7 +51,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 >
                   Catalogue
                 </Link>
-                <FavoritesNavButton />
+                <Suspense fallback={<span className="rounded-xl px-2.5 py-1.5 text-xs text-brand sm:px-3 sm:py-2 sm:text-sm">♡</span>}>
+                  <FavoritesNavButton />
+                </Suspense>
                 <Suspense fallback={<span className="h-4 w-16 animate-pulse rounded bg-line" />}>
                   <AccountLink />
                 </Suspense>
